@@ -27,3 +27,8 @@ $("#topContacts").append(HTMLlocation.replace("%data%", contact.location));
 var pic = "images/SZ_logo.png";
 
 $("#header").append(HTMLbioPic.replace("%data%", pic));
+
+//welcome message
+var welcome = "Developer with a designer's eye";
+
+$("#header").append(HTMLwelcomeMsg.replace("%data%", welcome));
