@@ -10,3 +10,15 @@ var formattedRole = HTMLheaderRole.replace(
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 
+//contact
+var contact = {
+	"mobile": "352.514.4816",
+	"email": "sarah.zeenberg@gmail.com",
+	"github": "poppysh",
+	"location": "Miami, FL",
+}
+
+$("#topContacts").append(HTMLmobile.replace("%data%", contact.mobile));
+$("#topContacts").append(HTMLemail.replace("%data%", contact.email));
+$("#topContacts").append(HTMLgithub.replace("%data%", contact.github));
+$("#topContacts").append(HTMLlocation.replace("%data%", contact.location));
