@@ -22,3 +22,8 @@ $("#topContacts").append(HTMLmobile.replace("%data%", contact.mobile));
 $("#topContacts").append(HTMLemail.replace("%data%", contact.email));
 $("#topContacts").append(HTMLgithub.replace("%data%", contact.github));
 $("#topContacts").append(HTMLlocation.replace("%data%", contact.location));
+
+//pic
+var pic = "images/SZ_logo.png";
+
+$("#header").append(HTMLbioPic.replace("%data%", pic));
