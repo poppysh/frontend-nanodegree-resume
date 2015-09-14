@@ -36,6 +36,48 @@ var bio = {
 	},
 };
 
+var work = {
+	"jobs": [
+		{
+			"employer": "Babywearing: the magazine",
+			"title": "Publisher",
+			"location": "Miami, FL", 
+			"dates": "2014-Present",
+			"description": "Design, photograph, edit, publish and promote international niche magazine.",
+		},
+
+		{
+			"employer": "Simply the Best Magazine",
+			"title": "Art Director",
+			"location": "Boca Raton, FL", 
+			"dates": "2007-Present",
+			"description": "Design bi-monthly glossy magazine including all editorials and advertisements. Also maintin and design the website.",
+		},
+
+		{
+			"employer": "The Gainesville Sun",
+			"title": "Advertising Designer",
+			"location": "Gainesville, FL", 
+			"dates": 2010-2011,
+			"description": "Build ads and advertorials for both newspaper and magazine clients. Design sales materials for marketing campaigns.",
+		},
+     ],
+
+	display: function (){
+		$("#workExperience").prepend(HTMLworkStart);
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		$(".work-entry:last").append(formattedEmployer);
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		$(".work-entry:last").append(formattedTitle);
+		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+		$(".work-entry:last").append(formattedLocation);
+		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+		$(".work-entry:last").append(formattedDates);
+		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		$(".work-entry:last").append(formattedDescription);
+	},
+};
+
 var education = {
 	"schools": [
 		{
@@ -82,4 +124,5 @@ var education = {
 };
 
 bio.display();
+work.display();
 education.display();
