@@ -33,8 +33,53 @@ var bio = {
 		$("#header").append(HTMLskillsStart);
 		var formattedSkills = HTMLskills.replace("%data%", bio.skills);
 		$("#header").append(formattedSkills);
+	},
+};
 
+var education = {
+	"schools": [
+		{
+			"name": "Santa Fe College",
+	 		"location": "Gainesville, FL",
+			"degree": "AS",
+	 		"majors": "Graphic Design",
+			"dates": 2003,
+			"url": "http://www.sfcollege.edu/",
+		}
+	],
+	"onlineCourses": [
+		{
+			"title": "Front-End Web Developer Nanodegree",
+			"school": "Udacity",
+			"date": 2015,
+			"url": "https://www.udacity.com/",
+		}
+	],
+
+	display: function () {
+		$("#education").prepend(HTMLschoolStart);
+		var formattedName = HTMLschoolName.replace("%data%", education.schools.name);
+		$("#education").append(formattedName);
+		var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools.degree);
+		$("#education").append(formattedDegree);
+		var formattedDate = HTMLschoolDates.replace("%data%", education.schools.dates);
+		$("#education").append(formattedDate);
+		var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools.location);
+		$("#education").append(formattedLocation);
+		var formattedMajors = HTMLschoolMajor.replace("%data%", education.schools.majors);
+		$("#education").append(formattedMajors);
+		var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses.title);
+		$("#education").append(formattedTitle);
+
+		$("#education").append(HTMLonlineClasses);
+		var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses.school);
+		$("#education").append(formattedOnlineSchool);
+		var formattedOnlineCourses = HTMLonlineDates.replace("%data%", education.onlineCourses.date);
+		$("#education").append(formattedOnlineCourses);
+		var formattedOnlineUrl = HTMLonlineURL.replace("%data%", education.onlineCourses.url);
+		$("#education").append(formattedOnlineUrl);
 	},
 };
 
 bio.display();
+education.display();
