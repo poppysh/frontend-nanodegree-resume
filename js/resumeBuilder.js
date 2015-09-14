@@ -12,17 +12,29 @@ var bio = {
 		"Programming", "Social Media", "Print Design",
 	],
 	"biopic": "images/SZ_logo.png",
+	
 	display: function () {
-		$("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
-		$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
-		$("#topContacts").append(HTMLmobile.replace("%data%", bio.contact.mobile));
-		$("#topContacts").append(HTMLemail.replace("%data%", bio.contact.email));
-		$("#topContacts").append(HTMLgithub.replace("%data%", bio.contact.github));
-		$("#topContacts").append(HTMLlocation.replace("%data%", bio.contact.location));
-		$("#header").append(HTMLbioPic.replace("%data%", bio.biopic));
-		$("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
-		$("#header").append(HTMLskills.replace("%data%", bio.skills));
-	}
-}
+		var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+		$("#header").prepend(formattedRole);
+		var formattedName = HTMLheaderName.replace("%data%", bio.name);
+		$("#header").prepend(formattedName);
+		var formattedMobile = HTMLmobile.replace("%data%", bio.contact.mobile);
+		$("#topContacts").append(formattedMobile);
+		var formattedEmail = HTMLemail.replace("%data%", bio.contact.email);
+		$("#topContacts").append(formattedEmail);
+		var formattedGithub = HTMLgithub.replace("%data%", bio.contact.github);
+		$("#topContacts").append(formattedGithub);
+		var formattedLocation = HTMLlocation.replace("%data%", bio.contact.location);
+		$("#topContacts").append(formattedLocation);
+		var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
+		$("#header").append(formattedPic);
+		var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+		$("#header").append(formattedWelcome);
+		$("#header").append(HTMLskillsStart);
+		var formattedSkills = HTMLskills.replace("%data%", bio.skills);
+		$("#header").append(formattedSkills);
+
+	},
+};
 
 bio.display();
