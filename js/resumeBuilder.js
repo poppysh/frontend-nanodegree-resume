@@ -30,9 +30,16 @@ var bio = {
 		$("#header").append(formattedPic);
 		var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 		$("#header").append(formattedWelcome);
-		$("#header").append(HTMLskillsStart);
-		var formattedSkills = HTMLskills.replace("%data%", bio.skills);
-		$("#header").append(formattedSkills);
+		
+		if(bio.skills.length > 0) {
+			$("#header").append(HTMLskillsStart);
+			var formattedSkills = HTMLskills.replace("%data%", bio.skills[0]);
+			$("#header").append(formattedSkills);
+			var formattedSkills = HTMLskills.replace("%data%", bio.skills[1]);
+			$("#header").append(formattedSkills);
+			var formattedSkills = HTMLskills.replace("%data%", bio.skills[2]);
+			$("#header").append(formattedSkills);
+		}
 	},
 };
 
@@ -64,41 +71,20 @@ var work = {
      ],
 
 	display: function (){
-		$("#workExperience").append(HTMLworkStart);
-		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[0].employer);
-		$(".work-entry:last").append(formattedEmployer);
-		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[0].title);
-		$(".work-entry:last").append(formattedTitle);
-		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[0].location);
-		$(".work-entry:last").append(formattedLocation);
-		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[0].dates);
-		$(".work-entry:last").append(formattedDates);
-		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[0].description);
-		$(".work-entry:last").append(formattedDescription);
-
-		$("#workExperience").append(HTMLworkStart);
-		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[1].employer);
-		$(".work-entry:last").append(formattedEmployer);
-		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[1].title);
-		$(".work-entry:last").append(formattedTitle);
-		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[1].location);
-		$(".work-entry:last").append(formattedLocation);
-		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[1].dates);
-		$(".work-entry:last").append(formattedDates);
-		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[1].description);
-		$(".work-entry:last").append(formattedDescription);
-
-		$("#workExperience").append(HTMLworkStart);
-		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[2].employer);
-		$(".work-entry:last").append(formattedEmployer);
-		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[2].title);
-		$(".work-entry:last").append(formattedTitle);
-		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[2].location);
-		$(".work-entry:last").append(formattedLocation);
-		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[2].dates);
-		$(".work-entry:last").append(formattedDates);
-		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[2].description);
-		$(".work-entry:last").append(formattedDescription);
+		for (job in work.jobs) {
+			$("#workExperience").append(HTMLworkStart);
+			
+			var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+			var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+			var formattedEmployerTitle = formattedEmployer + formattedTitle;
+			$(".work-entry:last").append(formattedEmployerTitle);
+			var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+			$(".work-entry:last").append(formattedLocation);
+			var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+			$(".work-entry:last").append(formattedDates);
+			var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+			$(".work-entry:last").append(formattedDescription);
+		}
 	},
 };
 
@@ -108,12 +94,7 @@ var projects = {
 			"title": "Portfolio Site",
 			"dates": "August 2015",
 			"description": "Built a portfolio site to showcase my projects using HTML, CSS and Bootstrap.",
-			"images": [
-				{
-					"image": "images/PortfolioProject.png",
-					"url": "https://www.myportfolio.com/",
-				},
-			],
+			"images": "images/PortfolioProject.png",
 		},
 	],
 
@@ -125,7 +106,7 @@ var projects = {
 		$(".projects-entry:last").append(formattedDates);
 		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.project[0].description);
 		$(".projects-entry:last").append(formattedDescription);
-		var formattedImages = HTMLprojectImage.replace("%data%", projects.project[0].images.image);
+		var formattedImages = HTMLprojectImage.replace("%data%", projects.project[0].images);
 		$(".projects-entry:last").append(formattedImages);
 	},
 };
