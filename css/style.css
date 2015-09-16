@@ -11,7 +11,8 @@ h5,
 h6 {
   padding:0;
   margin:0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
 }
 
 .clear-fix {
@@ -26,7 +27,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #ffffff;
   line-height: 48px;
   display: inline;
 }
@@ -34,7 +35,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: #660066;
   line-height: 29px;
   padding: 10px;
 }
@@ -42,7 +43,7 @@ h2 {
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000;
+  color: #660066;
   line-height: 22px;
 }
 
@@ -53,12 +54,12 @@ h4 {
   line-height: 17px;
 }
 
-h2,
-h3,
-h4,
-h5 {
-  padding:10px 5%;
+h2, h4, h5 {
+  padding: 10px 5%;
+}
 
+h3 {
+  padding: 10px 0;
 }
 
 
@@ -86,7 +87,7 @@ p {
 }
 
 a {
-  color: #1199c3;
+  color: #4a4a4a;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -100,16 +101,16 @@ a {
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #b8b6b8;
   display: none;
 }
 
-.orange {
-  background-color: #f5ae23;
+.purple {
+  background-color: #660066;
 }
 
-.orange-text {
-  color: #f5ae23;
+.gray-text {
+  color: #b8b6b8;
 }
 
 .white-text {
@@ -143,6 +144,10 @@ a {
 
 .center-content {
   padding: 2.5% 5%;
+}
+    
+#no_indent {
+  padding: 0px 0;
 }
 
 ul {
