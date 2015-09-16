@@ -89,7 +89,7 @@ var work = {
 };
 
 var projects = {
-	"project": [
+	"projects": [
 		{
 			"title": "Portfolio Site",
 			"dates": "August 2015",
@@ -97,18 +97,24 @@ var projects = {
 			"images": "images/PortfolioProject.png",
 		},
 	],
+};
 
-	display: function () {
+projects.display = function() {
+	for (project in projects.projects) {
 		$("#projects").append(HTMLprojectStart);
-		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.project[0].title);
-		$(".projects-entry:last").append(formattedTitle);
-		var formattedDates = HTMLprojectDates.replace("%data%", projects.project[0].dates);
-		$(".projects-entry:last").append(formattedDates);
-		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.project[0].description);
-		$(".projects-entry:last").append(formattedDescription);
-		var formattedImages = HTMLprojectImage.replace("%data%", projects.project[0].images);
-		$(".projects-entry:last").append(formattedImages);
-	},
+		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+		$(".project-entry:last").append(formattedTitle);
+		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+		$(".project-entry:last").append(formattedDates);
+		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+		$(".project-entry:last").append(formattedDescription);
+		if (projects.projects[project].images.length > 0) {
+			for (image in projects.projects[project].images) {
+				var formattedImages = HTMLprojectImage.replace("%data%", projects.projects[project].images);
+				$(".project-entry:last").append(formattedImages);
+			}
+		}
+	}
 };
 
 var education = {
@@ -155,6 +161,7 @@ var education = {
 		$("#education").append(formattedOnlineUrl);
 	},
 };
+
 
 bio.display();
 work.display();
